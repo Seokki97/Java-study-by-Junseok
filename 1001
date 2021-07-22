@@ -1,0 +1,8 @@
+//code up 1001
+package first;
+public class whileex {
+    public static void main(String[] args) {
+    	System.out.println("Hello");
+    }
+}
+    
