@@ -1,0 +1,28 @@
+package javamainl;
+import java.util.Scanner;
+public class javapractice {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		int cmt = 0;
+		int copy = N;
+		while(true) {
+			int k = N/10;
+			int m = N%10;
+			int x = (k+m)%10;
+			int y = m*10 + x;
+			
+			N = y;
+			System.out.println(N);
+			cmt++;
+			if(copy == N){
+				break;
+			}
+			
+		}
+		System.out.println(cmt);
+	}
+			
+}
+		
+			
