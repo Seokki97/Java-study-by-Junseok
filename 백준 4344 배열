@@ -1,0 +1,45 @@
+package javamainl;
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class javapractice {
+
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int t_case = sc.nextInt();
+		//float aver = 0;
+		int count = 0; //
+		int sum = 0;
+		int[] score = new int[10];
+		for(int i=0; i<t_case; i++) {
+			int st_num = sc.nextInt();
+			for(int k = 0; k< st_num; k++) {
+				
+				score[k] = sc.nextInt();
+				
+			}
+			for(int j=0; j<st_num; j++) {
+				
+				sum += score[j];
+			}
+			
+				float aver = sum/st_num; 
+				System.out.println(sum);
+				System.out.println(aver);
+				for(int m = 0; m<st_num; m++) {
+					if(score[m]>aver) {
+						count++;
+						sum = 0; //sum초기화
+					}
+				}
+				float percent = count*100/st_num;
+				count = 0;//count 초기화
+				System.out.println(percent);
+		}
+	}			
+}
+// 내가 생각한 알고리즘
+// 먼저 배열로 학생 수를 입력받고--> 학생수에 맞게 점수를 입력할 수 있게 반복문으로 만듦.
+//그 후 평균,평균넘는 학생비율 구하는 변수를 생성하고 조건문을 통해 검사함
+//주의할 점은- 검사를 한 뒤에 sum이랑 count값을 초기화하지 않으면 누적돼서 
