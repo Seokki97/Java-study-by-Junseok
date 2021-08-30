@@ -1,0 +1,60 @@
+package javamainl;
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class javapractice {
+
+	public static void test() {
+		int i=1;
+		int j;
+		while(i<10000) {
+		if(i<10) {
+				j = i+i; //j가 2나옴.
+				System.out.println(j);
+			}
+		else if(i>=10 &&i<100) {
+				j = i + (i/10) + (i%10);
+				System.out.println(j);
+			}
+		else if(i>=100 &&i<1000) {
+			j = i + (i/100) + (i%100);
+			System.out.println(j);
+			}
+		else if(i>=1000 &&i<10000) {
+			j = i + (i/1000) + (i%1000);
+			System.out.println(j);
+			}
+		i++;
+		
+		}
+	
+			
+	}
+		
+		
+	
+
+	public static void main(String[] args) {
+		test();
+	}			
+}
+//음...자릿수를 이용해야하니까.. 배열을 10000개 생성해야하나..? 이럼 메모리가 너무 많이든다..
+//결국 규칙은 self_num[15] = self_num[15] + self_num[1] + self_num[5]; 이렇게 되는데..
+//그럼 만들때 self_num[(n*10)+m] = self_num[(n*10)+m] + self_num[n] + self_num[m] 이런식인가..?
+//self num 10보다 작으면 
+
+//문제 이해를 잘못함......
+// 예를들어 2부터 시작한다고 가정.
+//그럼 d[2]= d[2] + 2 -> 이 규칙을 만들어
+//그다음 그 데이터값을 받는 새로운 변수를 만들어.
+//그걸 반복해..
+//그리고 그 반복한 수ㄹ를 1~10000까지 순회하면서
+//그 값이 아닌걸 출력해. 그리고 1을 추가해. 이럼 끝!
+// 1자리수일땐 d[n] = d[n] +n 인데
+//10의자리수 일땐 d[n] = d[n]+ d[n/10] + d[n%10]
+//100의자리수 일땐 d[n] = d[n]+ d[n/100] + d[n%100]
+//1000의자리수일 댄 d[n] = d[n] + d[n/1000] + d[n%1000];
+//아ㅏ....
+//아ㅏㅏ......
+//아.........................................................
+//1부터 10000까지 하나하나 다 검사를 해야하나본데.................
