@@ -1,0 +1,36 @@
+package javamainl;
+import java.util.Scanner;
+import java.util.Arrays;
+
+class calculator{
+	static double PI = 3.14; //클래스변수 -> 클래스가 갖고 있는 모든 변수들은 다 가질수있게하는 변수
+	//class변수를 사용하는 이유는- 모든 인스턴스가 같은 값을 공유하게(고정값)하고 싶을 때 를 위하여 
+	//static -> 이변수가 클래스에 소속이 된다라는 뜻 -> 모든 메소드,인스턴스에서 동일한 값을 가져올 수 있게 한다 라는 뜻.
+	//사용법은 밑에 생성한 객체를 이용하여 c1.PI; 이렇게 사용하면 됨. 이러면PI값이 붙음
+	static int base = 0; // 클래스 변수 base
+	int left;
+	int right; //전역변수 left, right
+	
+	public void setOprands(int left, int right) { //setoprands란 메소드를 생성하였고. 이 메소드에 전역변수를 담음
+		this.left = left; 
+		this.right =right;
+		
+	}
+	public void sum() { //sum메소드
+		System.out.println(this.left+this.right+base);
+	}
+	public void aver() {
+		System.out.println((this.left+this.right)/2 +base);//aver메소드
+	}
+}
+public class javapractice {
+
+	public static void main(String[] args) {
+		calculator c1 = new calculator(); //!!!! 여기서 calculator란 객체를 생성하여 c1이란 변수에 담는것.
+		c1.setOprands(1,2); //calculator의 setOprands함수를 불러오는것. 변수 값이 할당되어있지않기때문에 값을 넣어줌
+		c1.sum(); //클래스의 sum메소드를 불러오는것.
+		
+		calculator.base = 10; //라고 정의해두면 기본값 0 이 아닌 10으로 설정해두고 실행하는것.
+	
+	}			
+}
