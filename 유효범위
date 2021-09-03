@@ -1,0 +1,28 @@
+package javamainl;
+import java.util.Scanner;
+import java.util.Arrays;
+
+
+
+public class javapractice {
+	static int i = 5;
+	
+	static void a() {
+		int i = 10;
+		b();
+	}
+	static void b() {
+		System.out.println(i);
+	}
+	
+	public static void main(String[] args) {
+		a();
+		
+		
+		
+		
+	}			
+}
+//실행 결과가 10 이 아닌 5가 출력되는 이유는
+//a메소드에서 b메소드를 호출하고 있는데, b메소드 내에는 지역변수가 정의되어 있지 않기 때문에 클래스변수인 5를 가져오게된다.
+//(지역변수가 전역변수보다 우선된다는 원칙)
