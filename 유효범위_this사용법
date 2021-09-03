@@ -1,0 +1,30 @@
+package javamainl;
+import java.util.Scanner;
+import java.util.Arrays;
+
+
+class c2{
+	int v = 10;
+	
+	void m() {
+		int v = 20;
+		System.out.println(v);
+		//System.out.println(this.v);
+	}
+}
+
+
+public class javapractice {
+	
+	public static void main(String[] args) {
+		c2 c1 = new c2();
+		c1.m();
+		
+		
+		
+		
+	}			
+}
+//를 제와한 코드에서 결과값은 20이다. 하지만 지역변수가 아닌 클래스변수 10을 가져오고 싶다면 어떻게 해야할까?
+//이떄 사용하는게 this이다.
+//유효범위란 변수를 전역변수, 지역변수 나눠서 좀 더 관리하기 편리하도록 한 것이다. 
