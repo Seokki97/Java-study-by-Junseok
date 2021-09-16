@@ -1,0 +1,35 @@
+package javamainl;
+import java.util.Scanner;
+import java.util.Arrays;
+
+
+//생성자
+class calculator {
+	int left, right;
+	public calculator(int left, int right) {//클래스와 똑같은 이름의 메소드를 생성한다
+		this.left = left; //전역변수의 값을 가져오는 this
+		this.right = right;
+	} //생성자의 사용이유= 원래는 oprands라는 메소드를 만들어서 불어와야하는데, 이 과정이 사용자에겐 번거롭게 느껴지기때문에 사용함
+	 //클래스가 생성될때 클래스와 똑같은 이름의 메소드가 가장 먼저 실행되도록 약속되어있다.
+		public void add() {
+		System.out.println(this.left + this.right);
+	}
+}
+public class javapractice {
+	
+	public static void main(String[] args) {
+		calculator c1 = new calculator(15,20);
+		c1.add();
+		calculator c2 = new calculator(20,30);
+		c2.add();
+		
+	}			
+}
+//생성자의 특징
+//값을 반환하지 않는다. - 반환값을 필요로 하는 작업에서는 생성자 사용 x
+//생셩자의 이름은 클래스의 이름과 동일
+
+//++return
+// 함수에서 사용하는데 왜 사용하냐하면 .. 함수는 입력 - 연산 - 산출의 과정으로 이루어진다 함수를 네모박스로 이해하면 편함
+// 이때 return은 output의 역할을 담당함. 함수를 마치고 원하는 값을 내보내는 거임.
+// 리턴값이 없는 메소드는 명시적으로 리턴타입 부분에 void를 쓴다
