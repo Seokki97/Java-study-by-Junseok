@@ -1,0 +1,45 @@
+package javamainl;
+import java.util.Scanner;
+import java.util.Arrays;
+
+//상속과 생성자
+
+class calculator {
+	int left, right;
+	//public calculator() {} super() 을 사용할 경우 따로 기본생성자를 설정하지 않아도 됨.
+	public calculator(int left, int right) {
+		this.left = left;
+		this.right = right;
+	}
+	public void setoprands(int left, int right) {
+		this.left= left;
+		this.right = right;
+	}
+	public void sum() {
+		System.out.println(this.left + this.right);
+	}
+	public void aver() {
+		System.out.println((this.left+this.right)/2);
+	}
+}
+class Substractionablecalculator extends calculator{
+	public Substractionablecalculator(int left, int right) {
+	super(left,right);//하위클래스가 상위클래스를 참조하기 위해서 사용하는 것.
+	
+	}
+	public void substract() {
+		System.out.println(this.left - this.right);
+	}
+}
+
+public class javapractice {
+	
+	public static void main(String[] args) {
+		Substractionablecalculator c1 = new Substractionablecalculator(10,20);
+		c1.setoprands(30,20);
+		c1.substract();		
+	}			
+}
+//자식생성자가 부모생성자를 상속받으려면 명시적으로 부모생성자의 기본 생성자를 가져와야하는데 부모생성자의 매개선수가 있으면 기본생성
+//자가 아니기 떄문에 기본생성자를 따로 만들어주고, supe()을 이용해서 자식 클래스가 부모 클래스에게 무엇을 상속받았는지 알려줘야한다.
+//따라서super()을
