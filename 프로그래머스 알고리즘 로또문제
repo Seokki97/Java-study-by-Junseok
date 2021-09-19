@@ -1,0 +1,109 @@
+package javamainl;
+import java.util.Scanner;
+import java.util.Arrays;
+
+class lotto{
+	Scanner sc = new Scanner(System.in);
+	int[] lottos = new int[6];
+	int[] win_nums = new int[6];
+	int count = 0;
+	int expand = 0;
+	int result;
+	public void my_num() {
+		
+		for(int i = 0; i<6 ; i++) {
+			lottos[i] = sc.nextInt();
+			System.out.print(lottos[i]);	
+		}
+		System.out.println("로또 정답을 입력해주세요");
+	}
+	public void correct_num() {
+		for(int i = 0; i< 6 ; i++) {
+			win_nums[i] = sc.nextInt();
+			
+		}
+	}
+	public void calculator() {
+		int change = count;
+		for(int i =0;i<6;i++){
+			if(lottos[i] == win_nums[0]) {
+				count++;
+			}
+			else if(lottos[i] == win_nums[1]) {
+				count++;
+			}
+			else if(lottos[i] == win_nums[2]) {
+				count++;
+			}
+
+			else if(lottos[i] == win_nums[3]) {
+				count++;
+			}
+
+			else if(lottos[i] == win_nums[4]) {
+				count++;
+			}
+
+			else if(lottos[i] == win_nums[5]) {
+				count++;
+			}
+			else if(lottos[i]==0) {
+				expand++;
+			}
+	}
+}
+	
+	public void max_min() {
+		if(count+expand == 6) {
+			System.out.println("맥시멈 1등입니다.");
+	}
+		else if(count+expand == 5) {
+			System.out.println("맥시멈 2등입니다.");
+	}
+		else if(count+expand == 4) {
+			System.out.println("맥시멈 3등입니다.");
+	}
+		else if(count+expand == 3) {
+			System.out.println("맥시멈 4등입니다.");
+	}
+		else if(count+expand == 2) {
+			System.out.println("맥시멈 5등입니다.");
+	}
+		else if(count+expand < 2) {
+			System.out.println("탈락");
+	}
+		if(count ==6) {
+			System.out.println("미니멈 1등입니다.");
+		}
+		if(count ==5) {
+			System.out.println("미니멈 2등입니다.");
+		}
+		if(count ==4) {
+			System.out.println("미니멈 3등입니다.");
+		}
+		if(count ==3) {
+			System.out.println("미니멈 4등입니다.");
+		}
+		if(count ==2) {
+			System.out.println("미니멈 5등입니다.");
+		}
+		if(count ==1) {
+			System.out.println("미니멈 6등입니다.");
+		}
+		if(count ==0) {
+			System.out.println("미니멈 6등입니다.");
+		}
+	}
+}
+public class javapractice {	
+	public static void main(String[] args) {
+
+		lotto c1 = new lotto();
+		c1.my_num();
+		c1.correct_num();
+		c1.calculator();
+		c1.max_min();
+	}
+	
+}
+//코드를 더 간결하게 만들 수 있는 방법에 대해 공부를 해야겠다........... 반성 또 반성ㄹ
