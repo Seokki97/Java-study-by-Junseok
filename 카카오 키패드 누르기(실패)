@@ -1,0 +1,61 @@
+package javamainl;
+import java.util.Scanner;
+import java.util.Arrays;
+
+class Keypad{
+	Scanner sc = new Scanner(System.in);
+	int[] numbers = new int[11];
+	
+	public void Keypad() {
+		for(int i = 0 ; i<11; i++) {
+			numbers[i] = i+1;
+		}
+	}
+	public void keyInput() {
+	for(int i =0; i<11; i++) {
+		numbers[i] = sc.nextInt();
+	}
+}
+	public void Left_hand() {
+		for(int j = 0; j<11; j++) {
+			if(numbers[j]== 1) {
+				System.out.print("L");
+			}
+			else if(numbers[j]== 4) {
+				System.out.print("L");
+			}
+			else if(numbers[j]== 7) {
+				System.out.print("L");
+			}
+		}
+	}
+	public void Right_hand() {
+		for(int i = 0; i<11; i++) {
+			if(numbers[i]== 3) {
+				System.out.print("R");
+			}
+			else if(numbers[i]== 6) {
+				System.out.print("R");
+			}
+			else if(numbers[i]== 9) {
+				System.out.print("R");
+			}
+		}
+	}
+	public void center() {//이게 문제닷.. 만약에 2를 누르면 left와 right의 위치를 판단하여 거리를 계산하고 넣어야하는데.
+		//순차로 내려가서 만약에 세번째 인덱스에 5가 들어왔어.
+		//ex  14635 이렇게 됐어. 그럼 4번째 인덱스 3번째 인덱스 두번째 인덱스 첫번째 인덱스
+		
+	}
+}
+public class javapractice {	
+
+	public static void main(String[] args) {
+	Keypad c1= new Keypad();
+	c1.keyInput();
+	c1.Left_hand();
+	c1.Right_hand();
+	}
+	
+}
+
