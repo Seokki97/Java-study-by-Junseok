@@ -1,0 +1,35 @@
+package javamainl;
+import java.util.Scanner;
+import java.util.Arrays;
+class solution{
+	Scanner sc = new Scanner(System.in);
+	int N=10;
+	int numbers[]= new int[N];
+	public void Input() {
+		for(int i=0; i<10; i++) {
+			numbers[i]= sc.nextInt();
+		}
+	}
+	public void calculator() {
+		int sum = 0;
+		for(int i=0; i<10; i++) {
+		for(int j = 0; j<10; j++) {
+			if(i == numbers[j]) {
+				sum = sum + numbers[j];			
+				} // 45에서 numbers[j]의 합을 뺴는 알고리즘
+			}
+		}
+		System.out.println(45-sum);	
+	}
+}
+	
+
+public class javapractice {
+
+	public static void main(String[] args) {
+		solution c1 = new solution();
+		c1.Input();
+		c1.calculator();
+	}
+
+}
