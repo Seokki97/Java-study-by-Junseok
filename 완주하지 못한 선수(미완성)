@@ -1,0 +1,65 @@
+package javamainl;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+class solution{
+	Scanner sc = new Scanner(System.in);
+	int N=3;
+	String[] participant = new String[N];
+	String[] completion = new String[N-1];
+	/*public void Change() {
+		ArrayList<String> arrayList = new ArrayList<>();
+		for(String temp: participant) {
+		arrayList.add(temp);
+		}
+	}*/
+	public void extend() {
+		for(int i = 0 ; i <participant.length; i++) {
+			participant[i] =sc.nextLine();
+		}
+	}
+	public void complete() {
+		for(int i= 0; i < completion.length; i++) {
+			completion[i] = sc.nextLine();
+		}
+	}
+	//nextline은 뭔진 모르겠는데 엔터쳐야 다음 인덱스로 넘어가는듯..? 문자열이라 그런가? 
+	public void calculator() {
+		extend();
+		complete();
+
+		ArrayList<String> arrayList = new ArrayList<>();
+		for(String temp: participant) {
+		arrayList.add(temp);
+		}
+		ArrayList<String> list = new ArrayList<>();
+		for(String temp: completion) {
+			arrayList.add(temp);
+		}
+		for(int k = 0; k< arrayList.size(); k++) {
+			System.out.println(arrayList.get(k));
+		}
+		for(int i = 0 ; i <arrayList.size(); i++) {
+		for(int j = 0; j <list.size(); j++) {
+			if( arrayList.get(i)== list.get(j)) {
+					arrayList.remove(i);
+					System.out.println(arrayList.get(0));
+					} else {System.out.println(arrayList.get(i));
+					
+					}
+				} 
+			
+		}
+	}
+}
+
+	
+
+public class javapractice {
+
+	public static void main(String[] args) {
+		solution c1 = new solution();
+		c1.calculator();
+	}
+}
