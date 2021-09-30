@@ -1,0 +1,44 @@
+package javamainl;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+class solution{
+	Scanner sc = new Scanner(System.in);
+	int N=3;
+	String[] participant = new String[N];
+	String[] completion = new String[N-1];
+	public void Input_participant() {
+		for(int i = 0 ; i <participant.length; i++) {
+			participant[i] =sc.nextLine();
+		}
+	}
+	public void Input_completetion() {
+		for(int j= 0; j < completion.length; j++) {
+			completion[j] = sc.nextLine();
+		}
+	}
+	//nextline은 엔터쳐야 다음 인덱스로 넘어가는듯..? 문자열이라 그런가? 
+	public void calculator() {
+	Input_participant();
+	Input_completetion();
+	
+	Arrays.sort(participant);
+	Arrays.sort(completion);
+	for( int i = 0 ; i<completion.length; i++) {
+		if(!participant[i].equals(completion[i])) {
+			
+			System.out.println(participant[i]);
+			}
+		}
+	}
+}
+
+
+public class javapractice {
+
+	public static void main(String[] args) {
+		solution c1 = new solution();
+		c1.calculator();
+	}
+}
