@@ -1,0 +1,54 @@
+package javamainl;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+class solution{
+	Scanner sc= new Scanner(System.in);
+	int left;
+	int right;
+	int N = right-left+1;
+	int[] bitwise = new int[N];
+	
+	public void numbers() {
+		left = sc.nextInt();
+		right = sc.nextInt();
+			System.out.println(N);
+		for(int j=0; j<N; j++) {
+
+			bitwise[j] = left+j;
+			
+			
+		}
+		//System.out.println(bitwise[1]);
+	}
+		
+		
+
+public void Measure_calculator(){
+	numbers();
+	int measure;
+	for(int i = 1; i<=bitwise[0] ; i++){
+		if( bitwise[0] % i == 0) {
+			measure = i;
+			//System.out.println(measure);
+		
+	}
+}
+	
+	
+}
+
+
+}
+
+
+
+public class javapractice {
+
+	public static void main(String[] args) {
+		solution c1 = new solution();
+		c1.numbers();
+		//c1.Measure_calculator();
+	}
+}
