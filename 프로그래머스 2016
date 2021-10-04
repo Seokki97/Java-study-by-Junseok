@@ -1,0 +1,59 @@
+package javamainl;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+/* 366일이고 시작이 금요일임..
+ * 만약에 5월 24일을 입력했어 그럼 1+2+3+4월 = 31 29 31 30 +24잖아 그럼 145잖아 -> 
+ * * 그럼 20나눠지고 5남잖아 나머지가 1금 2토 3일 4월 5화 6수 0목
+ */
+class calculator{
+	Scanner sc = new Scanner(System.in);
+	int[] day = {0,31,29,31,30,31,30,31,31,30,31,30,31};
+	int cal;
+	public void calculate() {
+		System.out.println("날짜를 입력하세요");
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		for(int i =0; i<a; i++) {
+			cal += day[i];
+		}
+		int cal2 = cal + b;
+		if(cal2%7 == 1) {
+			System.out.println("Fri");
+		}
+		if(cal2%7 == 2) {
+			System.out.println("Sat");
+		}
+		if(cal2%7 == 3) {
+			System.out.println("Son");
+		}
+		if(cal2%7 == 4) {
+			System.out.println("Mon");
+		}
+		if(cal2%7 == 5) {
+			System.out.println("Tue");
+		}
+		if(cal2%7 == 6) {
+			System.out.println("Wed");
+		}
+		if(cal2%7 == 0) {
+			System.out.println("Thu");
+		}
+		
+		
+
+	}
+
+}
+public class javapractice {
+
+	public static void main(String[] args) {
+		calculator c1 = new calculator();
+		c1.calculate();
+		
+		
+	}
+	
+	
+}
