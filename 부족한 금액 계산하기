@@ -1,0 +1,37 @@
+package javamainl;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+class calculator{
+	Scanner sc = new Scanner(System.in);
+	int price = sc.nextInt();
+	int money = sc.nextInt();
+	int count = sc.nextInt();
+	int price_count=0;
+	int result;
+	public void calculate() {
+		for(int i = 1; i<=count; i++) {
+			price_count = price_count+(i*price); 
+		}
+		result = price_count-money;
+		System.out.println(result);
+		/* 카운트 횟수가 4면 price *4 *3 *2 *1을 해서 이걸 다ㄷ허ㅏ는거잖아.
+		 * 
+		 */
+	}
+
+}
+public class javapractice {
+
+
+	public static void main(String[] args) {
+	calculator c1 = new calculator();
+	c1.calculate();
+	}
+		
+		
+	}
+	
+	
+
