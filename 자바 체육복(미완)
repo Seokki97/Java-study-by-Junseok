@@ -1,0 +1,32 @@
+package javamainl;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+/*음. 포인트는 바로 인접한 번호의 학생에게만 체육복을 빌려줄 수 있다는 것.?
+ * 예를들어 n이 5로 주어지면 배열 크기 5번까지 생성하고 lost가 2,4면 1 3 5번의 번호들을 추적하여 리턴하는방식인듯
+ */
+class calculator{
+	public int solution(int n, int[] lost, int[] reserve) {
+		int answer = n;
+		int[] a = new int[n]; //(0,1,2,3,4)
+		for(int i =0; i< lost.length; i++) {
+		for(int j = 0; j< lost.length; j++) {
+		if([i] - lost[j] >1 || [i]-lost[j]<-1) {
+			answer -= 1;
+			}
+		
+		}
+		}
+		return answer;
+	
+	}
+}
+public class javapractice {
+	public static void main(String[] args) {
+	calculator c1 = new calculator();
+	c1.solution(0, null, null);
+	}
+	
+}
+
