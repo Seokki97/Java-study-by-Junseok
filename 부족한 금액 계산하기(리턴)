@@ -1,0 +1,25 @@
+package javamainl;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+
+class calculator{
+	public long solution(int price, int money, int count) {
+		long answer = 0;
+		long result=0;
+		for(int i = 1; i<count+1; i++) {
+			result += price*i;
+		} 
+		answer = result - money;
+		return answer;
+	}
+}
+public class javapractice {
+	public static void main(String[] args) {
+	calculator c1 = new calculator();
+	System.out.println(c1.solution(3, 20, 4));
+	
+	}
+	
+}
