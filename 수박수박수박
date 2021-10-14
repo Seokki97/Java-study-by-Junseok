@@ -1,0 +1,29 @@
+package javamainl;
+import java.util.Scanner;
+//나머지를 기준으로 출력하기
+class calculator{
+public String solution(int n) {
+	String answer = "";
+	String su = "수";
+	String bak = "박";
+	if(n%2==0) {
+		for(int k =1; k<=n/2; k++) {
+			answer += su+bak;
+			}
+	}
+	if(n%2!=0) {
+		for(int k = 1; k<=n/2; k++) {
+			answer += su+bak;
+		}
+		answer += su;
+	}
+	return answer;
+}
+}
+public class javapractice {
+	public static void main(String[] args) {
+	calculator c1 = new calculator();
+	System.out.print(c1.solution(3));
+	}
+	
+}
