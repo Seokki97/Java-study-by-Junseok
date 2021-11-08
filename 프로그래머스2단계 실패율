@@ -1,0 +1,75 @@
+package javamainl;
+import java.util.Scanner;
+import java.util.Arrays;
+
+
+class solution{
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		float[] number = new float[N]; //확률 배열
+		int K = sc.nextInt();
+		int[] stages = new int[K]; //스테이지 클리어 한사람들 배열
+		float[] mamuri = new float[N]; // 새로운 배열에 복사
+		int[] jinma = new int[N]; // 마무리 
+		public void input() {
+			for(int i = 0; i<stages.length; i++) {
+				stages[i] = sc.nextInt();
+			}
+		}
+		
+		public void solution() { 	
+			float x = stages.length; 
+			float y = stages.length; //분모
+		for(int i=0; i<N; i++) {
+			float k = 0; //0으로 해놓고	
+			for(int j = 0 ; j<stages.length; j++) {
+			if( i+1 == stages[j]) { //
+				k+= 1/y;  // 8분의1씩 더해서 k에 담아
+				number[i] = k;
+				x--;
+			}
+			else if(stages[j] > N) {
+				number[number.length-1] = 0;
+			}
+			}
+			y = x;
+		}
+		}
+		public void sort() {
+		//확률이 높은 인덱스를 를 mamuri 0 에 원소로 넣는다.
+			for(int i = 0 ; i < number.length; i++) {
+				mamuri[i] = number[i];
+			}
+			Arrays.sort(number);  
+			}
+		public void calculator() {
+			for(int i = 0 ; i< number.length; i++) {
+				for(int j = 0; j< mamuri.length; j++) {
+				float max = number[number.length-1-i];
+				int g = 0;
+					if( max == mamuri[j]) {
+						g = j+1;
+						jinma[i]= g;
+						mamuri[j] =-1;
+						break;
+					}
+				
+			}
+			}
+		}
+		public void result() {			
+	for(int l = 0 ; l<number.length; l++) {
+			System.out.println(jinma[l]);
+		}
+	}
+}
+public class javapractice {
+	public static void main(String[] args) {
+	solution c1 = new solution();
+	c1.input();
+	c1.solution();
+	c1.sort();
+	c1.calculator();
+	c1.result();
+		}   	
+}
