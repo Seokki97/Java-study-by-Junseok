@@ -1,0 +1,36 @@
+class solution{
+	Scanner sc = new Scanner(System.in);
+	int N = sc.nextInt();//개수 입력받기
+	Stack<Object> st = new Stack<>();
+	
+	public void input() {
+		int cash = -1;
+		for(int i = 0 ; i< N ; i++) {
+			st.push(sc.nextInt());
+			cash = (int) st.peek();
+			if(cash == 0) {
+				st.pop();
+				st.pop();
+				
+			}	//전처리 -> 값을 넣고 만약에 0이 나오면 pop 2번
+		}
+	}
+	public void result() {
+		int sum = 0;
+		for(int i = 0; i<10; i++) {
+			sum += (int) st.pop(); 
+			if( st.empty()== true) {
+				break;
+			}
+		}
+		System.out.println(sum);
+	} //이제 나머지 pop값들을 empty가 되기 전까지 누적으로 더해주면 끝!
+}
+public class javapractice {
+	public static void main(String[] args) {
+	solution c1 = new solution();
+	c1.input();
+	c1.result();
+	
+	}   	
+}
