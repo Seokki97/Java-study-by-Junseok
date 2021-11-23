@@ -20,3 +20,19 @@ public int seach(Object o); //인자값으로 받은 데이터의 위치 반환
 </code>
 </pre>
  
+ #### 예제
+ <pre>
+ <code>
+Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < 5; i++) {
+            stack.push(i + 1);
+            System.out.println(stack.peek());
+        } // 1, 2, 3, 4, 5 가 현재 들어가 있음
+        stack.pop(); // 1, 2, 3, 4
+        System.out.println(stack.peek()); // 4
+        System.out.println(stack.search(1)); // 4
+        System.out.println(stack.empty()); // false
+</code>
+</pre>
+pop은 후입선출이므로 가장 늦게들어온 5가 빠져나감
+search동작 방식은 -> 인덱스를 반환하는 것이 아니라, 순번을 반환하는 것. 즉 값이 몇번째에 있는지를 반환하는 것임.
