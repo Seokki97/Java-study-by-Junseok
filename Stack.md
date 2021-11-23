@@ -15,7 +15,7 @@ Java에서의 Stack 클래스
 public Element push(Element item); //데이터 추가
 public Element pop(); //최근 추가된 데이터 삭제
 public Element peek(); //최근 추가된 데이터 조회
-public boolean emply(); //Stack의 값이 비었는지 확인
+public boolean empty(); //Stack의 값이 비었는지 확인
 public int seach(Object o); //인자값으로 받은 데이터의 위치 반환
 </code>
 </pre>
