@@ -1,0 +1,34 @@
+class solution{
+	Scanner sc = new Scanner(System.in);
+	Stack<Character> stack = new Stack<>();
+	public void input() {
+			String k = sc.next();
+			int length = k.length();
+			for(int i = 0; i < length ; i++) {
+				char m =  k.charAt(i);
+				if(m == '(') {
+					stack.push(m);
+				
+				}
+				else if(stack.empty()) {
+					System.out.println("No");
+					
+				}
+				else { stack.pop();}
+		
+			}
+			if(stack.empty()) {
+				System.out.println("Yes");
+			}
+			else {System.out.println("No");
+			}
+			
+			}
+}
+public class javapractice {
+	public static void main(String[] args) {
+	solution c1 = new solution();
+	c1.input();
+	
+	}   	
+}
