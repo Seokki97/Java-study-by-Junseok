@@ -1,0 +1,51 @@
+class Solution{
+	Scanner sc = new Scanner(System.in);
+	int heejun, minji, gayung, jungyun, junseok, chaeyoung, sebin, jaelim, suyun ;
+	public void Month() {
+		int[] day = new int[7];
+		System.out.println("월요일부터 일요일까지 일수를 입력해주세요");
+		for(int i = 0; i< 7; i++) {
+			day[i] = sc.nextInt();
+		}
+	}
+	public void Mon() {
+		int k = 0;
+		System.out.println("순서대로 시간을 입력해주세요");
+		while(k==19) {
+			heejun = sc.nextInt();
+			k += heejun;
+			minji = sc.nextInt();
+			k += minji;
+			gayung = sc.nextInt();
+			k += gayung;
+			jungyun = sc.nextInt();
+			k+= jungyun;
+		}
+	}
+	public void Tues() {
+		int k = 0;
+		System.out.println("순서대로 시간을 입력해주세요");
+		while(k==19) {
+			heejun = sc.nextInt();
+			k += heejun;
+			minji = sc.nextInt();
+			k += minji;
+			gayung = sc.nextInt();
+			k += gayung;
+			jungyun = sc.nextInt();
+			k+= jungyun;
+		}
+	}
+	public void Wen() {
+		int k = 0;
+		System.out.println("순서대로 시간을 입력해주세요");
+		while(k ==19) {
+			junseok = sc.nextInt();
+			k += junseok;
+			heejun = sc.nextInt();
+			k += heejun;
+			gayung = sc.nextInt();
+			k += junseok;
+			jungyun = sc.nextInt();
+		}
+	}
