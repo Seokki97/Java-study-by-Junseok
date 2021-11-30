@@ -1,0 +1,266 @@
+package javamainl;
+import java.util.Scanner;
+import java.util.Stack;
+import java.util.Arrays;
+import java.util.Comparator;
+class Calendar{ //입력한 달에 월요일~일요일이 각 몇번 있는지를 나타내는 클래스
+	Scanner sc = new Scanner(System.in);
+	int[] days = new int[12];
+	int year;
+	int month;
+	int a;
+	int k;
+	int first = 1;
+	int[] SEVEN = new int[7];
+	String first_day;
+	public void input() {
+		System.out.println("년을 입력하세요");
+		year= sc.nextInt();
+		System.out.println("월을 입력하세요");
+		month = sc.nextInt();
+		System.out.println("시작 요일을 입력하세요");
+		first_day = sc.next();
+	}
+	
+	public void calculator() {
+		if( year % 4==0) {
+			int[] days = {31,29,31,30,31,30,31,31,30,31,30,31};
+			
+		}
+		else { 
+			int[] days = {31,28,31,30,31,30,31,31,30,31,30,31};
+		}
+		for(int i = 0 ; i < SEVEN.length; i++) {
+			SEVEN[i] = 4;
+		}
+	}
+	// 월요일이라고 입력했으면 그 달의 월요일이 총 몇개인지 나타내주는 메소드들
+	public void MON() {
+		int a = days[month-1];
+		if(first_day== "월") {
+			if(a == 31) {
+			for(int i = 0; i < 3; i++) {
+				 SEVEN[i] +=1;
+			}
+			if(a == 30) {
+				for(int j =0; j<2 ; j++) {
+					SEVEN[j] +=1;
+				}
+			}
+			
+			}
+		}
+	}
+	public void TUE() {
+		int a = days[month-1];
+		if(first_day== "화") {
+			if(a == 31) {
+			for(int i = 1; i < 4; i++) {
+				 SEVEN[i] +=1;
+			}
+			if(a == 30) {
+				for(int j =1; j<3 ; j++) {
+					SEVEN[j] +=1;
+				}
+			}
+			
+			}
+		}
+	}
+	public void WED() {
+		int a = days[month-1];
+		if(first_day== "수") {
+			if(a == 31) {
+			for(int i = 2; i < 5; i++) {
+				 SEVEN[i] +=1;
+			}
+			if(a == 30) {
+				for(int j =2; j<4 ; j++) {
+					SEVEN[j] +=1;
+				}
+			}
+			
+			}
+		}
+	}
+	public void THUR() {
+		int a = days[month-1];
+		if(first_day== "목") {
+			if(a == 31) {
+			for(int i = 3; i < 6; i++) {
+				 SEVEN[i] +=1;
+			}
+			if(a == 30) {
+				for(int j =3; j<5 ; j++) {
+					SEVEN[j] +=1;
+				}
+			}
+			
+			}
+		}
+	}
+	public void FRI() {
+		int a = days[month-1];
+		if(first_day== "금") {
+			if(a == 31) {
+			for(int i = 4; i < 7; i++) {
+				 SEVEN[i] +=1;
+			}
+			if(a == 30) {
+				for(int j =4; j<6 ; j++) {
+					SEVEN[j] +=1;
+				}
+			}
+			
+			}
+		}
+	}
+	public void SAT() {
+		int a = days[month-1];
+		if(first_day== "토") {
+			if(a == 31) {
+			for(int i = 5; i < 7; i++) {
+				 SEVEN[i] +=1;
+			}
+				SEVEN[0] += 1 ;
+			}
+			if(a == 30) {
+				for(int j =5; j<7 ; j++) {
+					SEVEN[j] +=1;
+				}
+			}
+			
+			}
+		}
+	public void SUN() {
+		int a = days[month-1];
+		if(first_day== "일") {
+			if(a == 31) {
+				SEVEN[6] +=1;
+				SEVEN[0] +=1;
+				SEVEN[1] +=1;
+			if(a == 30) {
+				SEVEN[6] +=1;
+				SEVEN[0] +=1;
+			}
+			
+			}
+		}
+	}
+	
+	
+	}
+// 2022년 1월 입력했꼬 시작요일을 토요일로 했어 
+class Solution extends Calendar{
+	Scanner sc = new Scanner(System.in);
+
+	int result ;
+	int bosu = 8720;
+	int mon,tue,wed,thur,fri,sat,sun;
+	int mon_result = mon*SEVEN[0]*bosu; 
+	int tue_result = tue*SEVEN[1]*bosu;	
+	int wed_result = wed*SEVEN[2]*bosu;
+	int thur_result = thur*SEVEN[3]*bosu;
+	int fri_result = fri*SEVEN[4]*bosu;
+	int sat_result = sat*SEVEN[5]*bosu;
+	int sun_result = sun*SEVEN[6]*bosu;
+	public void Jun_seok() {
+
+	wed = 6;
+	sun = 10;
+	result = wed_result + sun_result;
+	System.out.println("준석이의 급여는"+result+"원 입니다!");
+	}
+	public void Jung_yun() {
+
+	 mon = 4;
+	 tue = 4;
+	 wed = 3;
+	 thur = 3;
+	 result = mon_result + tue_result + wed_result+ thur_result;
+	 System.out.println("정연이의 급여는"+result+"원 입니다!");
+	} 
+	public void Hee_jun() {
+
+		mon = 5;
+		tue = 5;
+		wed = 6;
+		thur = 4;
+		sat = 4;
+		result = mon_result + tue_result + wed_result+ thur_result + sat_result;
+		System.out.println("희준이의 급여는"+result+"원 입니다!");
+	}
+	 
+	public void Chae_young() {
+
+		thur = 4;
+		fri = 10;
+		result = thur_result + fri_result;
+		System.out.println("채영이의 급여는"+result+"원 입니다!");
+	}
+	public void Jae_lim() {
+
+		fri = 6;
+		sat = 5;
+	result = fri_result + sat_result;
+	System.out.println("재림이의 급여는"+result+"원 입니다!");
+	}
+	public void Su_yun() {
+		sat = 6;
+		sun = 8;
+		result = sat_result + sun_result;
+		System.out.println("수연이의 급여는"+result+"원 입니다!");
+	}
+	public void Ga_young() {
+	
+		mon = 3;
+		tue = 3;
+		wed = 4;
+		thur = 4;
+		result = mon_result + tue_result + wed_result + thur_result;
+		System.out.println("가영이의 급여는"+result+"원 입니다!");
+	}
+	public void Min_ji() {
+		mon = 7;
+		tue = 7;
+		result = mon_result+ tue_result;
+		System.out.println("민지의 급여는"+result+"원 입니다!");
+	}
+	public void Se_bin() {
+	thur = 4;
+	fri =3;
+	sat = 3;
+	result = thur_result + fri_result + sat_result;
+	System.out.println("세빈이의 급여는"+result+"원 입니다!");
+	}
+	public void De_ta() {
+		
+	}
+	
+	
+}
+
+public class javapractice {
+	public static void main(String[] args) {
+		Solution c1 = new Solution();
+		c1.input();
+		c1.calculator();
+		c1.MON();
+		c1.TUE();
+		c1.WED();
+		c1.THUR();
+		c1.FRI();
+		c1.SAT();
+		c1.SUN();
+		c1.Jun_seok();
+		c1.Jung_yun();
+		c1.Hee_jun();
+		c1.Chae_young();
+		c1.Jae_lim();
+		c1.Su_yun();
+		c1.Ga_young();
+		c1.Min_ji();
+		c1.Se_bin();
+		
+	}   	
+}
